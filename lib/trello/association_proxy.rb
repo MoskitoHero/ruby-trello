@@ -14,7 +14,7 @@ module Trello
       Array(association.options[:extend]).each { |ext| proxy_extend(ext) }
     end
 
-    def proxy_assocation
+    def proxy_association
       @association
     end
 
@@ -31,12 +31,12 @@ module Trello
     end
 
     def to_ary
-      proxy_assocation.target.dup
+      proxy_association.target.dup
     end
     alias_method :to_a, :to_ary
 
     def <<(*records)
-      proxy_assocation.concat(records) && self
+      proxy_association.concat(records) && self
     end
   end
 end
